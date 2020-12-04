@@ -185,10 +185,8 @@ int main(int argc, char** argv)
 			cout << "Enter the ID of the faculty you wish to delete: ";
 			cin >> deleteID;
 			manager->deleteFaculty(deleteID);
-			//NEED TO MOVE STUDENTS OF DELETED FACULTY MEMBER TO OTHER ADVISORS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		}
 
-		//Change a student's advisor given the student ID and the new faculty ID
 		if (choice == 11)
 		{
 			int studentID;

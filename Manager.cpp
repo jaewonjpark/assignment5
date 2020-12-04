@@ -147,7 +147,6 @@ void Manager::changeStudentAdvisor(int sID, int fID)
 	currFaculty->removeStudent(student->ID);
 }
 
-//Given a faculty ID, print ALL the namesand info of his / her advisees
 void Manager::printFacultyAdvisees(int fID)
 {
 	Faculty* faculty = masterFaculty->searchWithKey(fID);
@@ -161,6 +160,5 @@ void Manager::removeAdviseeFromFaculty(int sID, int fID)
 	Faculty* faculty = masterFaculty->searchWithKey(fID);
 
 	faculty->removeStudent(removeStudent->ID);
-	//IS THIS CORRECT??? WHAT DOES THE STUDENT NEED TO KNOW AFTER THEY HAVE BEEN REMOVED FROM THE FACULTY
 	removeStudent->adID = 0;
 }
