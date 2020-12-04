@@ -22,7 +22,6 @@ public:
 	Manager();
 	~Manager();
 
-	//make the menuu operations here!!
 	Student* findStudentWithID(int ID);
 	Faculty* findFacultyWithID(int ID);
 	void printStudentTree();
@@ -35,9 +34,6 @@ public:
 	void changeStudentAdvisor(int sID, int fID);
 	void printFacultyAdvisees(int fID);
 	void removeAdviseeFromFaculty(int sID, int fID);
-
-
-	// make a function that assigns the student to the correct faculty
 	void assignAdvisor(int sID, int fID);
 };
 

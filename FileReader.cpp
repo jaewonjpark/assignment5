@@ -21,7 +21,6 @@ FileReader::~FileReader()
 BST<int, Student*>* FileReader::readStudentFile()
 {
 	cout << "in read student file " << endl;
-	//check to make sure the file exists
 	int line = 0;
 	ifstream studentFile;
 	studentFile.open(studentFileName);
@@ -30,7 +29,6 @@ BST<int, Student*>* FileReader::readStudentFile()
 		cout << "in student file is open if statement" << endl;
 		//if the file is open read the student tree
 		BST<int, Student*>* studentTree = new BST<int, Student*>();
-		//put the information from the student file in the tree
 		//eof = end of file so while you are not at the end of the file
 		while (studentFile.eof() == false)
 		{
@@ -108,10 +106,8 @@ BST<int, Student*>* FileReader::readStudentFile()
 	}
 }
 
-//check to see if the files are in the directory
 BST<int, Faculty*>* FileReader::readFacultyFile()
 {
-	//check to make sure the file exists
 	ifstream facultyFile;
 	facultyFile.open(facultyFileName);
 	if (facultyFile.is_open())
@@ -138,7 +134,6 @@ BST<int, Faculty*>* FileReader::readFacultyFile()
 				}
 			}
 			//get the faculty's ID
-			//get the index of the : in the string
 			index = line.find_first_of(':');
 			string IDstr = line.substr(index + 2);
 			//make the string an integer
@@ -197,8 +192,6 @@ BST<int, Faculty*>* FileReader::readFacultyFile()
 }
 
 
-//write the tree first, and then read it
-// assume we already have the tree
 void FileReader::writeToStudentFile(BST <int, Student*>* studentTree)
 {
 	//write and serialize the student tree

@@ -10,9 +10,6 @@
 #include <fstream>
 using namespace std;
 
-//convert to a template
-//BUILD THE TREE
-
 template <class T, class V>
 class BST
 {
@@ -82,7 +79,7 @@ BST<T,V>::BST()
 template <class T, class V>
 BST<T,V>::~BST()
 {
-	//FILL IN
+
 }
 
 template <class T, class V>
@@ -137,12 +134,9 @@ template <class T, class V>
 void BST<T, V>::serialization(string newFileName)
 {
 	ofstream file;
-	//cout << "after file" <<endl;
 	file.open(newFileName);
-	//cout << "after open file" << endl;
 	serializationNode(root, file);
 	file.close();
-	//cout << "File is closed" << endl;
 }
 
 template <class T, class V>
@@ -206,8 +200,6 @@ TreeNode<T,V>* BST<T,V>::getMin()
 	return (current);
 }
 
-
-//insert is just a failed search??
 template <class T, class V>
 void BST<T,V>::insert(T key, V value)
 {
@@ -251,16 +243,13 @@ void BST<T,V>::insert(T key, V value)
 				current = current->right;
 				if (current == NULL)
 				{
-					//we found the insertion point - update the parent
 					parent->right = node;
 					numberNodes++;
-					//cout << "number of nodes3: " << numberNodes << endl;
 					break;
 				}
 			}
 		}
 	}
-	//cout << "insert run: " << insertRun << endl;
 }
 
 template <class T, class V>
@@ -303,7 +292,6 @@ V BST<T, V>::searchWithKey(T key)
 	}
 	else
 	{
-		//tree is not empty - look for the student passed in in the student tree
 		TreeNode<T, V>* current = root;
 		while (current->key != key)
 		{
@@ -355,11 +343,6 @@ bool BST<T,V>::deleteNode(T key)
 				//did not find the value
 				return false;
 			}
-			//if we make it here, we have found the node that needs to be deleted
-			//now check the different cases
-
-			//no children
-			//check if node to be deleted is a leaf node
 			if (current->left == NULL && current->right == NULL)
 			{
 				if (current == root)

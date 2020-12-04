@@ -13,32 +13,9 @@
 using namespace std;
 int main(int argc, char** argv)
 {
-	Manager* manager = new Manager();
-
-	//////make the faculty
-	//Faculty* faculty = new Faculty(7654321, "kathy", "administrator", "comp sci");
-	////insert the faculty into a tree
-	//manager->addFaculty(faculty);
-
-	//////make the student
-	//Student* student = new Student(2313535, "joely fontana", "sophomore", "history", 3.2, 7654321);
-	////insert the student into the tree
-	//manager->addStudent(student);
-
-	//Student* student2 = new Student(2302555, "stephen white", "freshman", "comp sci", 3.7, 7654321);
-	////insert the student into the tree
-	//manager->addStudent(student2);
-
-
-
-
-
-	//delete manager;
+	Manager* manager = new Manager();;
 	int choice;
-	cout << "\nWelcome to the Records Database." << endl;
-	//manager->addFaculty(new Faculty(7654321, "Kendra Day", "professor", "comp sci"));
-	//manager->addFaculty(new Faculty(1234567, "stephen white", "loser", "comp sci"));
-	/*manager->addStudent(new Student(2313535, "joely fontana", "sophomore", "history", 3.2, 7654321));*/
+	cout << "\nWelcome." << endl;
 
 	while(choice != 14)
 	{
@@ -245,7 +222,6 @@ int main(int argc, char** argv)
 	delete manager;
 }
 
-//TESTING FUNCTION - NOTHING SHOULD WORK OUTSIDE OF THIS AND IF IT DOES YOU FUCKED UP JOELY
 void Testing()
 {
 	//make a new search tree as a pointer - getting rid of/ just for testing
@@ -253,21 +229,20 @@ void Testing()
 	BST<int, Faculty*>* facultyTree = new BST<int, Faculty*>();
 
 	//make the student
-	Student* student = new Student(2313535, "joely fontana", "sophomore", "history", 3.2, 5592081);
+	Student* student = new Student(2313535, "Jaewon", "Junior", "Software", 3.0, 223344);
 	//insert the student into the tree
 	studentTree->insert(2313535, student);
 
-	Student* student2 = new Student(2302555, "stephen white", "freshman", "comp sci", 3.7, 5512341);
+	Student* student2 = new Student(2302555, "Aaron", "Senior", "comp sci", 3.5, 223243);
 	//insert the student into the tree
 	studentTree->insert(2302555, student2);
 
 
 	//make the faculty
-	Faculty* faculty = new Faculty(11111, "kathy", "administrator", "comp sci");
+	Faculty* faculty = new Faculty(22222, "kathy", "administrator", "comp sci");
 	//insert the faculty into a tree
-	facultyTree->insert(11111, faculty);
+	facultyTree->insert(22222, faculty);
 
-	//FileReader::readStudentFile();
 	FileReader::writeToStudentFile(studentTree);
 	FileReader::writeToFacultyFile(facultyTree);
 

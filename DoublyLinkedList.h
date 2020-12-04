@@ -4,7 +4,6 @@
 // CPSC 350 - 01
 // Assignment #5
 
-//to solve the redefining errors (when the class is being called multiple times)
 #pragma once
 #include <iostream>
 #include "listNode.h"
@@ -20,7 +19,6 @@ class DoublyLinkedList
 public:
 	ListNode<T> *front;
 	ListNode<T> *back;
-//make size unsigned so it cant go negative
 	unsigned int size;
 
 //constructor
