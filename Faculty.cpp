@@ -15,8 +15,6 @@ Faculty::Faculty(int ID, string name, string job, string department)
 	this->name = name;
 	this->job = job;
 	this->department = department;
-	//this->studentIDs = studentIDs;
-	//make an empty list of student IDs
 	studentIDs = new DoublyLinkedList<int>();
 }
 Faculty::~Faculty()

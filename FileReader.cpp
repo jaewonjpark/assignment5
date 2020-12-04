@@ -17,7 +17,6 @@ FileReader::FileReader()
 FileReader::~FileReader()
 {}
 
-//open the files that contains the tree, reads the file, and makes an object
 BST<int, Student*>* FileReader::readStudentFile()
 {
 	cout << "in read student file " << endl;
@@ -203,6 +202,5 @@ void FileReader::writeToStudentFile(BST <int, Student*>* studentTree)
 void FileReader::writeToFacultyFile(BST <int, Faculty*>* facultyTree)
 {
 	//write and serialize the faculty tree
-	//use the printing function in the tree to write to it instead
 	facultyTree->serialization(facultyFileName);
 }

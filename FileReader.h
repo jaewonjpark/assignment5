@@ -22,7 +22,6 @@ public:
 	//destructor
 	~FileReader();
 	//preset the files
-	//make them static because the information never changes and consts so they cant be changed (and saves memory)
 	static const string studentFileName;
 	static const string facultyFileName;
 

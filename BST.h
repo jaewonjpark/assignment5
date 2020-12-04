@@ -359,7 +359,6 @@ bool BST<T,V>::deleteNode(T key)
 				}
 			}
 
-			//node to be deleted has one child, we need to determine if child is left or right and continue
 			else if (current->right == NULL) //child has no right child
 			{
 				if (current == root)

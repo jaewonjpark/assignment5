@@ -4,7 +4,6 @@
 // CPSC 350 - 01
 // Assignment #5
 
-//to solve the redefining errors (when the class is being called multiple times)
 #pragma once
 #include <iostream>
 using namespace std;

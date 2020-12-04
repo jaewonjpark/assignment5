@@ -163,10 +163,8 @@ T DoublyLinkedList<T>::removeFront()
 	}
 	else
 	{
-	//deletes the pointer that points back to the front element so you cant go back - but can still go forward
 		front->next->prev = NULL;
 	}
-	//move the front variable to the next node - now front only exists in the frontTemp variable
 	front = front->next;
 	//store the front's data in a temp variable
 	T temp = frontTemp->data;

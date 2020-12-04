@@ -18,11 +18,9 @@ public:
 	string name;
 	string job;
 	string department;
-	//make the student IDs a gen linked list
 	DoublyLinkedList <int>* studentIDs;
 	void addStudent(int ID);
 	void removeStudent(int ID);
-	//void addAdvisees(int ID);
 
 	friend ostream& operator << (ostream& out, const Faculty& c);
 };
