@@ -25,5 +25,4 @@ public:
 	//void addAdvisees(int ID);
 
 	friend ostream& operator << (ostream& out, const Faculty& c);
-	//friend ostream& operator >> (ostream& out, const Faculty& c);
 };

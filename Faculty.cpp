@@ -46,9 +46,3 @@ void Faculty::removeStudent(int ID)
 {
 	studentIDs->remove(ID);
 }
-
-////make a function that inputs all of a faculty's advisees into their list
-//void Faculty::addAdvisees(int ID)
-//{
-//	studentIDs->insertFront(ID);
-//}
