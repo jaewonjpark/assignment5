@@ -4,47 +4,23 @@
 // CPSC 350 - 01
 // Assignment #5
 
-#ifndef Student_H //checks whether Student_H is not declared.
-#define Student_H  //declare Student_H once #ifndef generates true.
-//include guards / prevents double declaration of any identifiers such as type
-
-
+#pragma once
 #include <iostream>
-
+#include <fstream>
 using namespace std;
+
 class Student
 {
-	private:
-		int studentID;
-		int advisorID;
-		string name;
-		string year;
-		string major;
-		double gpa;
-
-	public:
-		Student();
-		~Student();
-		void setStudentID(int id);
-		void setAdvisorID(int id);
-		void setName(string n);
-		void setYear(string y);
-		void setMajor(string m);
-		void setGPA(double g);
-		int getStudentID();
-		int getAdvisorID();
-		string getName();
-		string getYear();
-		string getMajor();
-		double getGPA();
-
-		friend ostream& operator<<(ostream& os, const Student s);
-		friend bool operator<(const Student& studentA, const Student& studentB);
-		friend bool operator>(const Student& studentA, const Student& studentB);
-		friend bool operator<=(const Student& studentA, const Student& studentB);
-		friend bool operator>=(const Student& studentA, const Student& studentB);
-		friend bool operator==(const Student& studentA, const Student& stuentB);
-		friend bool operator!=(const Student& studentA, const Student& stuentB);
+public:
+	Student(int ID, string name, string grade, string major, double GPA, int adID);
+	~Student();
+	//overloading the operators << and >>
+	friend ostream& operator << (ostream& out, const Student& c);
+	friend istream& operator >> (istream& out, const Student& c);
+	int ID;
+	string name;
+	string grade;
+	string major;
+	double GPA;
+	int adID;
 };
-
-#endif  //to know end of #ifndef

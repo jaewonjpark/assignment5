@@ -4,51 +4,26 @@
 // CPSC 350 - 01
 // Assignment #5
 
-#ifndef Faculty_H //checks whether Faculty_H  is not declared.
-#define Faculty_H  //declare Faculty_H once #ifndef generates true.
-//include guards / prevents double declaration of any identifiers such as type
-
-
+#pragma once
 #include <iostream>
-#include "doublyLinked.h"
+#include "DoublyLinkedList.h"
 using namespace std;
 
 class Faculty
 {
-	private:
-		int facID;
-		string name;
-		string level;
-		string dpt;
-		DoublyLinkedList<int> *studentIDs;
+public:
+	Faculty(int ID, string name, string job, string department);
+	~Faculty();
+	int ID;
+	string name;
+	string job;
+	string department;
+	//make the student IDs a gen linked list
+	DoublyLinkedList <int>* studentIDs;
+	void addStudent(int ID);
+	void removeStudent(int ID);
+	//void addAdvisees(int ID);
 
-	public:
-		Faculty();
-		~Faculty();
-
-		void setFacultyID(int id);
-		void setName(string n);
-		void setLevel(string l);
-		void setDpt(string dep);
-		void addStudentID(int id);
-		void remStudentID(int id);
-
-		int getFacID();
-		string getName();
-		string getLevel();
-		string getDpt();
-
-		DoublyLinkedList<int>* getStudentIDs();
-
-		friend ostream& operator<<(ostream& os, const Faculty f); //overloading operator
-		friend bool operator<(const Faculty& facultyA, const Faculty& facultyB);
-		friend bool operator>(const Faculty& facultyA, const Faculty& facultyB);
-		friend bool operator<=(const Faculty& facultyA, const Faculty& facultyB);
-		friend bool operator>=(const Faculty& facultyA, const Faculty& facultyB);
-		friend bool operator==(const Faculty& facultyA, const Faculty& facultyB);
-		friend bool operator!=(const Faculty& facultyA, const Faculty& facultyB);
-
+	friend ostream& operator << (ostream& out, const Faculty& c);
+	//friend ostream& operator >> (ostream& out, const Faculty& c);
 };
-
-
-#endif //to know end of #ifndef

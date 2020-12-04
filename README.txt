@@ -11,19 +11,21 @@ Assignment #5
 3. Faculty.h
 4. Student.cpp
 5. Student.h
-6. DataBase.cpp
-7. DataBase.h
-8. doublyLinked.h
-9. GenStack.h
-10. ListNode.h
-11. Node.h
-12. BST.h
+6. BST.h
+7. DoublyLinkedList.h
+8. Manager.cpp
+9. Manager.h
+10. TreeNode.h
+11. FileReader.cpp
+12. FileReader.h
 13. README.txt
+14. student.txt
+15. faculty.txt
+16. listNode.h
 
 
 3.) Known errors
-1. Program has undefined errors.
-2. ld returned 1 exit status (Linker error)
+1. No error
 
 4.) References
 1. https://stackoverflow.com/questions/1653958/why-are-ifndef-and-define-used-in-c-header-files
@@ -35,6 +37,6 @@ Assignment #5
 
 
 5.) Running Instructions
-1. Unzip and run
-2. g++ *.cpp
-3. ./a.out
+1. g++ *.cpp
+2. ./a.out
+3. Start with adding student and faculty information (#7 and 9)

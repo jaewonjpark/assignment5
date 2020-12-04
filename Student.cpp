@@ -8,86 +8,37 @@
 #include "Student.h"
 using namespace std;
 
-Student::Student()
+Student::Student(int ID, string name, string grade, string major, double GPA, int adID)
 {
-	studentID = 0;
-	advisorID = 0;
-	name = " ";
-	year = " ";
-	major = " ";
-	gpa = 0;
+	this->ID = ID;
+	this->name = name;
+	this->grade = grade;
+	this->major = major;
+	this->GPA = GPA;
+	this->adID = adID;
 }
 
 Student::~Student()
 {
+
 }
 
-void Student::setStudentID(int id)
+//overloaded operator functions
+ostream& operator<<(ostream& out, const Student& c)
 {
-	studentID = id;
+	//cout << "in operator function" << endl;
+	out << "\nID: " << c.ID << endl;
+	//cout << "after ID" << endl;
+	out << "Name: " << c.name << endl;
+	out << "Grade: " << c.grade << endl;
+	//cout << "after grade out" << endl;
+	out << "Major: "<< c.major << endl;
+	out <<"GPA: "<< c.GPA << endl;
+	out <<"Advisor ID: " << c.adID << endl;
+	return out;
 }
 
-void Student::setAdvisorID(int id)
+istream& operator >>(istream& in, Student& c)
 {
-	advisorID = id;
-}
-
-void Student::setName(string n)
-{
-	name = n;
-}
-
-void Student::setYear(string y)
-{
-	year = y;
-}
-
-void Student::setMajor(string m)
-{
-	major = m;
-}
-
-void Student::setGPA(double g)
-{
-	gpa = g;
-}
-
-int Student::getStudentID()
-{
-	return studentID;
-}
-
-int Student::getAdvisorID()
-{
-	return advisorID;
-}
-
-string Student::getName()
-{
-	return name;
-}
-
-string Student::getYear()
-{
-	return year;
-}
-
-string Student::getMajor()
-{
-	return major;
-}
-
-double Student::getGPA()
-{
-	return gpa;
-}
-
-ostream& operator<<(ostream& os, const Student s)
-{
-  os << "Student ID: " << s.studentID << endl;
-  os << "Name: " << s.name << endl;
-  os << "Year: " << s.year << endl;
-  os << "GPA: " << s.gpa << endl;
-	os << "Advisor ID: " << s.advisorID << endl;
-  return os;
+	//
 }

@@ -8,74 +8,47 @@
 #include "Faculty.h"
 using namespace std;
 
-Faculty::Faculty()
+//constructor
+Faculty::Faculty(int ID, string name, string job, string department)
 {
-	name = " ";
-	level = " ";
-	dpt = " ";
+	this->ID = ID;
+	this->name = name;
+	this->job = job;
+	this->department = department;
+	//this->studentIDs = studentIDs;
+	//make an empty list of student IDs
+	studentIDs = new DoublyLinkedList<int>();
 }
-
 Faculty::~Faculty()
 {
 
 }
 
-void Faculty::setFacultyID(int id)
+//overloaded operator functions
+ostream& operator <<(ostream& out, const Faculty& c)
 {
-	facID = id;
+	out << "ID: "<<c.ID << endl;
+	out << "Name: "<<c.name << endl;
+	out << "Job: " <<c.job << endl;
+	out << "Department: " << c.department << endl;
+	out << *(c.studentIDs) << endl;
+	return out;
 }
 
-void Faculty::addStudentID(int id)
+//add students to the faculty list
+void Faculty::addStudent(int ID)
 {
-	studentIDs->insertFront(id);
+	studentIDs->insertFront(ID);
 }
 
-void Faculty::remStudentID(int id)
+//remove students from the faculty list
+void Faculty::removeStudent(int ID)
 {
-	studentIDs->remove(id);
+	studentIDs->remove(ID);
 }
 
-void Faculty::setName(string n)
-{
-	name = n;
-}
-
-void Faculty::setLevel(string l)
-{
-	level = l;
-}
-
-void Faculty::setDpt(string d)
-{
-	dpt = d;
-}
-
-string Faculty::getName()
-{
-	return name;
-}
-
-int Faculty::getFacID()
-{
-	return facID;
-}
-
-string Faculty::getLevel()
-{
-	return level;
-}
-
-string Faculty::getDpt()
-{
-	return dpt;
-}
-
-ostream& operator<<(ostream& os, const Faculty f)
-{
-  os << "Faculty ID: " << f.facID << endl;
-  os << "Name: " << f.name << endl;
-  os << "Level: " << f.level << endl;
-  os << "Department: " << f.dpt << endl;
-  return os;
-
-}
+////make a function that inputs all of a faculty's advisees into their list
+//void Faculty::addAdvisees(int ID)
+//{
+//	studentIDs->insertFront(ID);
+//}
