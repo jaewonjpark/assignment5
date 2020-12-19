@@ -39,4 +39,3 @@ Assignment #5
 5.) Running Instructions
 1. g++ *.cpp
 2. ./a.out
-3. Start with adding student and faculty information (#7 and 9)
